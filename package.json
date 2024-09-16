@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Thupha41/backend-zero#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "ejs": "3.1.8",
     "express": "^4.21.0"
   }
