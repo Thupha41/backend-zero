@@ -1,0 +1,27 @@
+{
+  "name": "backend-zero",
+  "version": "1.0.0",
+  "description": "Thupha fullstack backend zero",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thupha41/backend-zero.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "Thupha41",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thupha41/backend-zero/issues"
+  },
+  "homepage": "https://github.com/Thupha41/backend-zero#readme",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
