@@ -11,10 +11,6 @@ const hostname = process.env.HOST_NAME;
 configViewEngine(app);
 
 //test connection
-// A simple SELECT query
-connection.query("SELECT * FROM Persons p", function (err, results, fields) {
-  console.log(">>> check results", results); // results contains rows returned by server
-});
 
 //Khai bao route
 app.use("/", webRoutes);
