@@ -10,7 +10,9 @@ const hostname = process.env.HOST_NAME;
 //config template engine
 configViewEngine(app);
 
-//test connection
+//config req.body
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //Khai bao route
 app.use("/", webRoutes);
