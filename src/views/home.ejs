@@ -8,44 +8,71 @@
   </head>
   <body>
     <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
+      <a class="active" href="/">Home</a>
+      <a href="/create">Register Form</a>
     </div>
-
-    <!-- Create form -->
-    <div class="form-add-new">
-        <form action="/create-user"  method="post">
-            <div class="container">
-              <h1>Register New User</h1>
-              <p>Please fill in this form to create an account.</p>
-              <hr>
-          
-              <label for="email"><b>Email</b></label>
-              <input type="text" placeholder="Enter Email" name="email" id="email">
-          
-              <label for="firstName"><b>First Name</b></label>
-              <input type="text" placeholder="Enter First Name" name="firstName" id="firstName">
-          
-              <label for="lastName"><b>Last Name</b></label>
-              <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName">
-
-              <label for="address"><b>Address</b></label>
-              <input type="text" placeholder="Enter Address" name="address" id="address">
-
-              <label for="city"><b>City</b></label>
-              <input type="text" placeholder="Enter City" name="city" id="city">
-              <hr>
-          
-              <button type="submit" class="registerbtn">Save</button>
-            </div>
-          
-            <!-- <div class="container signin">
-              <p>Already have an account? <a href="#">Sign in</a>.</p>
-            </div> -->
-        </form>
+    <div class="table-user-data">
+        <h1 class="heading_user">List users</h1>
+        <table id="users">
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>Email</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Berglunds snabbköp</td>
+              <td>Christina Berglund</td>
+              <td>Sweden</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+            </tr>
+            <tr>
+              <td>Ernst Handel</td>
+              <td>Roland Mendel</td>
+              <td>Austria</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Helen Bennett</td>
+              <td>UK</td>
+            </tr>
+            <tr>
+              <td>Königlich Essen</td>
+              <td>Philip Cramer</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Laughing Bacchus Winecellars</td>
+              <td>Yoshi Tannamuri</td>
+              <td>Canada</td>
+            </tr>
+            <tr>
+              <td>Magazzini Alimentari Riuniti</td>
+              <td>Giovanni Rovelli</td>
+              <td>Italy</td>
+            </tr>
+            <tr>
+              <td>North/South</td>
+              <td>Simon Crowther</td>
+              <td>UK</td>
+            </tr>
+            <tr>
+              <td>Paris spécialités</td>
+              <td>Marie Bertrand</td>
+              <td>France</td>
+            </tr>
+          </table>
     </div>
-
   </body>
 </html>
