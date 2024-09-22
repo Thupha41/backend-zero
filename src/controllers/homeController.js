@@ -1,7 +1,9 @@
 const connection = require("../config/database");
-
-const getHomePage = (req, res) => {
-  return res.render("home.ejs");
+const { getAllUsers } = require("../services/CRUDService");
+const getHomePage = async (req, res) => {
+  let userData = await getAllUsers();
+  console.log(userData);
+  return res.render("home.ejs", { listUser: userData });
 };
 const postCreateUser = async (req, res) => {
   let { email, firstName, lastName, city, address } = req.body; //Destructuring
@@ -13,11 +15,11 @@ const postCreateUser = async (req, res) => {
   res.send("Create user success!!!");
 };
 
-const getCreatePage = (req, res) => {
+const getCreateUserPage = (req, res) => {
   return res.render("register.ejs");
 };
 module.exports = {
   getHomePage,
   postCreateUser,
-  getCreatePage,
+  getCreateUserPage,
 };
