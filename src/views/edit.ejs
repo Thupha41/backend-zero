@@ -14,12 +14,12 @@
 
     <!-- Create form -->
     <div class="form-add-new">
-        <form action="/create-user"  method="post">
+        <form action="/update-user"  method="post">
             <div class="container">
               <h1>Edit a User</h1>
               <hr>
-              <label for="email"><b>Email</b></label>
-              <input type="text" placeholder="Enter Email" name="email" id="email" value="<%=userById.Email %>">
+              <label for="id" class="d-none"><b>ID</b></label>
+              <input type="hidden" name="userId" value="<%= userById.PersonID %>">
           
               <label for="firstName"><b>First Name</b></label>
               <input type="text" placeholder="Enter First Name" name="firstName" id="firstName" value="<%=userById.FirstName %>">
@@ -27,6 +27,9 @@
               <label for="lastName"><b>Last Name</b></label>
               <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName" value="<%=userById.LastName %>">
 
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" id="email" value="<%=userById.Email %>">
+              
               <label for="address"><b>Address</b></label>
               <input type="text" placeholder="Enter Address" name="address" id="address" value="<%=userById.Address %>">
 
