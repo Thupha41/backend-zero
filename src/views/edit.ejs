@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Edit a user</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="/">Home</a>
+      <a href="/create">Register Form</a>
+    </div>
+
+    <!-- Create form -->
+    <div class="form-add-new">
+        <form action="/create-user"  method="post">
+            <div class="container">
+              <h1>Edit a User</h1>
+              <hr>
+          
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" id="email">
+          
+              <label for="firstName"><b>First Name</b></label>
+              <input type="text" placeholder="Enter First Name" name="firstName" id="firstName">
+          
+              <label for="lastName"><b>Last Name</b></label>
+              <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName">
+
+              <label for="address"><b>Address</b></label>
+              <input type="text" placeholder="Enter Address" name="address" id="address">
+
+              <label for="city"><b>City</b></label>
+              <input type="text" placeholder="Enter City" name="city" id="city">
+              <hr>
+          
+              <button type="submit" class="registerbtn">Save</button>
+            </div>
+          
+            <!-- <div class="container signin">
+              <p>Already have an account? <a href="#">Sign in</a>.</p>
+            </div> -->
+        </form>
+    </div>
+
+  </body>
+</html>
