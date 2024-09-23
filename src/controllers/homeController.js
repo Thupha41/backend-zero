@@ -1,5 +1,5 @@
 const connection = require("../config/database");
-const { getAllUsers } = require("../services/CRUDService");
+const { getAllUsers, getUserById } = require("../services/CRUDService");
 const getHomePage = async (req, res) => {
   let userData = await getAllUsers();
   console.log(userData);
@@ -20,19 +20,15 @@ const getCreateUserPage = (req, res) => {
 };
 
 const getUpdatePage = async (req, res) => {
-  let { email, firstName, lastName, city, address } = req.body; //Destructuring
+  // let { email, firstName, lastName, city, address } = req.body; //Destructuring
   // let [rows, fields] = await connection.query(
   //   `UPDATE Persons SET firstName = ?, lastName = ?, city = ?, email = ?, address = ? WHERE PersonID = ?`,
   //   [firstName, lastName, city, email, address, req.params.userId]
   // );
   let userId = req.params.userId;
-  let [rows, fields] = await connection.query(
-    "SELECT * FROM Persons p WHERE PersonID = ?",
-    [userId]
-  );
-  console.log(rows);
-  console.log(">>> Check params", req.params);
-  res.render("edit.ejs", { userById: rows });
+  let user = await getUserById(userId);
+  console.log(user);
+  res.render("edit.ejs", { userById: user });
 };
 module.exports = {
   getHomePage,
