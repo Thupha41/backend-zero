@@ -1,9 +1,9 @@
 const connection = require("../config/database");
-const { connect } = require("../routes/web");
 const {
   getAllUsers,
   getUserById,
   updateUserById,
+  deleteUserById,
 } = require("../services/CRUDService");
 const getHomePage = async (req, res) => {
   let userData = await getAllUsers();
@@ -34,13 +34,9 @@ const postUpdateUser = async (req, res) => {
   res.redirect("/");
 };
 const postDeleteUser = async (req, res) => {
-  // const userId = req.body.userId;
-  // let [results, fields] = await connection.query(
-  //   "DELETE FROM Persons WHERE PersonID = ?",
-  //   [userId]
-  // );
-  // console.log(">>> Check results", results);
-  res.send("Delete success");
+  const userId = req.body.userId;
+  await deleteUserById(userId);
+  res.redirect("/");
 };
 const getDeletePage = async (req, res) => {
   let userId = req.params.userId;
