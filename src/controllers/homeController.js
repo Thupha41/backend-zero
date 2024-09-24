@@ -1,4 +1,5 @@
 const connection = require("../config/database");
+const { connect } = require("../routes/web");
 const {
   getAllUsers,
   getUserById,
@@ -9,10 +10,10 @@ const getHomePage = async (req, res) => {
   return res.render("home.ejs", { listUser: userData });
 };
 const postCreateUser = async (req, res) => {
-  let { email, firstName, lastName, city, address } = req.body; //Destructuring
-  let [rows, fields] = await connection.query(
-    `INSERT INTO Persons (LastName, FirstName, Address, City, Email) VALUES (?, ?, ?, ?, ?)`,
-    [lastName, firstName, address, city, email]
+  let { firstName, lastName, address, city, email } = req.body; //Destructuring
+  let [results, fields] = await connection.query(
+    `INSERT INTO Persons (FirstName, LastName, Address, City, Email) VALUES (?, ?, ?, ?, ?)`,
+    [firstName, lastName, address, city, email]
   );
   res.send("Create user success!!!");
 };
@@ -32,10 +33,27 @@ const postUpdateUser = async (req, res) => {
   await updateUserById(firstName, lastName, address, city, email, userId);
   res.redirect("/");
 };
+const postDeleteUser = async (req, res) => {
+  // const userId = req.body.userId;
+  // let [results, fields] = await connection.query(
+  //   "DELETE FROM Persons WHERE PersonID = ?",
+  //   [userId]
+  // );
+  // console.log(">>> Check results", results);
+  res.send("Delete success");
+};
+const getDeletePage = async (req, res) => {
+  let userId = req.params.userId;
+  let user = await getUserById(userId);
+  res.render("delete.ejs", { userById: user });
+};
+
 module.exports = {
   getHomePage,
   postCreateUser,
   getCreateUserPage,
   getUpdatePage,
   postUpdateUser,
+  postDeleteUser,
+  getDeletePage,
 };

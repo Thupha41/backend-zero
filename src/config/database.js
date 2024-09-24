@@ -21,6 +21,7 @@ const connection = mysql.createPool({
   queueLimit: 0,
   enableKeepAlive: true,
   keepAliveInitialDelay: 0,
+  charset: "utf8mb4",
 });
 
 module.exports = connection;

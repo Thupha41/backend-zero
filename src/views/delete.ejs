@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <link rel="stylesheet" href="../css/style.css"/>
+    <title>Delete a user</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="/">Home</a>
+      <a href="/create">Register Form</a>
+    </div>
+
+    <!-- Create form -->
+    <div class="form-add-new">
+        <form action="/delete-user"  method="post">
+            <div class="container">
+              <h1>Delete a user</h1>
+              <hr>
+              <label for="id" class="d-none"><b>ID</b></label>
+              <input type="hidden" name="userId" value="<%= userById.PersonID %>">
+
+              <span><b>Are you sure to delete this user?</b></span>
+
+
+              <hr>
+          
+              <button type="submit" class="registerbtn">Confirm</button>
+            </div>
+          
+        </form>
+    </div>
+
+  </body>
+</html>
